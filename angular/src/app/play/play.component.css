@@ -1,0 +1,62 @@
+
+.field {
+  position: fixed;
+  background-color: rgba(90, 90, 90, 0.30);
+  margin: 0%;
+  width: 672px;
+  height: 671px;
+  padding: 0px;
+  z-index: 1;
+}
+
+.center{
+  margin: auto;
+  width: 672px;
+  height: 671px;
+  border: 5px solid darkgray;
+  padding: 0px;
+}
+
+.main{
+  display: flex;
+  width: 700px;
+  height: 84px;
+  margin: 0%;
+  padding: 0px;
+}
+.black {
+  position: relative;
+  background-color: gray;
+  margin: 0%;
+  width: 12%;
+  height: 100%;
+  padding: 0px;
+}
+.white {
+  position: relative;
+  background-color: floralwhite;
+  margin: 0%;
+  width: 12%;
+  height: 100%;
+  padding: 0px;
+}
+.yellow {
+  position: relative;
+  background-color: burlywood;
+  margin: 0%;
+  width: 12%;
+  height: 100%;
+  padding: 0px;
+}
+
+.white_king {
+  margin: 0%;
+  background-size: cover;
+  background-image: url('src/app/pieces/white_king.png');
+}
+
+.black_king {
+  margin: 0%;
+  background-size: cover;
+  background-image: url('src/app/pieces/black_king.png');
+}
