@@ -1,3 +1,6 @@
-register\UsersResorce.class
+register\AutManager.class
+register\UsersResource.class
 register\Config.class
+register\UsersManager.class
+register\SameSiteFilter.class
 register\Users.class
