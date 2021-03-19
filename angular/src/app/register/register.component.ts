@@ -1,40 +1,54 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Post} from './post';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Users} from './Users';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
 export class RegisterComponent implements OnInit {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   jmeno: string;
   email: string;
   heslo: string;
-  posts: Observable<Post[]>;
-  postdata: {
-    username: 'pavel';
-    password: 'pavel';
+  post: Users;
+  postdata = {
+    username: 'fjvvel',
+    password: 'pdvel'
   };
-  readonly serverUrl = 'http://127.0.0.1:8080/Register/api/users';
+
+
+  readonly serverUrl = '/api/users';
 
   ngOnInit() {
   }
 
-  odeslat() {
 
+  odeslat(): void {
+    const user: Users = {username: this.jmeno, password: this.heslo};
 
-    this.http.post(this.serverUrl, this.postdata).toPromise().then(data => {
+    this.http.post(this.serverUrl, user, {withCredentials: true}).subscribe((data: any) => {
+      console.log(data, 'registered');
+      this.router.navigateByUrl('/play');
+    }, (data: any) => {
+      console.log(data, 'userexist');
+
+    });
+
+    this.http.get(this.serverUrl, {withCredentials: true}).subscribe((data: any) => {
       console.log(data);
     });
 
 
-    console.log(this.jmeno, this.email, this.heslo, ` odeslano`);
+    console.log(user, `odeslano`);
   }
 
 

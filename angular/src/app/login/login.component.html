@@ -1,1 +1,12 @@
-<p>login works!</p>
+<div id="text" >
+  <form class="obecne" (ngSubmit)="odeslat()">
+    <p>Jmeno:</p>
+    <input name="jmeno" [(ngModel)]="jmeno">
+    <p>Email:</p>
+    <input name="email" [(ngModel)]="email">
+    <p>Heslo:</p>
+    <input name="heslo" [(ngModel)]="heslo">
+    <p></p>
+    <button type="submit" class="btn btn-outline-light">Potvrdit</button>
+  </form>
+</div>
